@@ -17,3 +17,25 @@ Using Guided Access is a three-step process:
 Enable Guided Access on your phone.
 Start a Guided Access session when needed with a triple-click.
 End the Guided Access session with a triple-click and passcode or Touch ID to return to normal device usage.
+
+Alternatives:
+
+http://www.pcworld.com/article/2921718/2-easy-ways-to-child-proof-your-android-or-ios-device.html 
+
+1. Creating profiles in Android which is not in the control of the app developer.
+
+http://docs.kioskproapp.com/article/788-keeping-visitors-within-kiosk-pro
+
+When the Home button is pressed while in Guided Access, an on-screen message appears stating that Guided Access is enabled which cannot be turned off and may not work for your intended kiosk presentation.
+
+There is a known bug in iOS 8 and iOS 9 which will sometimes display this message when certain links are selected. We've partially resolved this in Kiosk Pro, though some links will still display this message. 
+
+2 - Single App Mode 
+
+http://docs.kioskproapp.com/article/833-guided-access-vs-single-app-mode
+
+3 - Apple Configurator 
+
+http://docs.kioskproapp.com/article/608-using-apple-configurator-for-deployment-management
+
+4 - 
