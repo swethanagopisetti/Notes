@@ -1,16 +1,13 @@
 https://support.apple.com/en-us/HT202612
 http://www.bewebsmart.com/ipod-ipad-iphone/limit-your-child-to-one-app-with-guided-access/
 
-Guided Access helps you to stay focused on a task while using your iPhone, iPad or iPod touch. It temporarily limits the device to a single app and lets us control which app features are available. 
+Guided Access helps you to stay focused on a task while using your iPhone, iPad or iPod touch and lets us control which app features are available. 
 Guided Access helps us achieve the following:
 - Temporarily restrict your iOS device to a single app
 - Disable areas of the screen that aren’t relevant to a task, or areas where an accidental gesture might cause a distraction
-- Disable the hardware buttons
-
-Guided Access temporarily locks down your iPhone to one app. Guided access also disables the hardware buttons (the “Home” button) so that you can’t return to the Home screen. 
+- Disable the hardware buttons so that you can’t return to the Home screen. 
 
 To enable/disable guided access, go to Settings, General, Accessibility, and select Guided Access. Flip the switch and tap Set Passcode to create a four-digit passcode. 
-If you want to allow someone - a child perhaps - to use a specific app on your iPad, but you don't want them to access the photos and email, you can lock your iPad to a single app. 
 
 Using Guided Access is a three-step process:
 
@@ -18,24 +15,72 @@ Enable Guided Access on your phone.
 Start a Guided Access session when needed with a triple-click.
 End the Guided Access session with a triple-click and passcode or Touch ID to return to normal device usage.
 
-Alternatives:
-
-http://www.pcworld.com/article/2921718/2-easy-ways-to-child-proof-your-android-or-ios-device.html 
-
-1. Creating profiles in Android which is not in the control of the app developer.
-
 http://docs.kioskproapp.com/article/788-keeping-visitors-within-kiosk-pro
 
 When the Home button is pressed while in Guided Access, an on-screen message appears stating that Guided Access is enabled which cannot be turned off and may not work for your intended kiosk presentation.
 
 There is a known bug in iOS 8 and iOS 9 which will sometimes display this message when certain links are selected. We've partially resolved this in Kiosk Pro, though some links will still display this message. 
 
+Alternatives:
+
+http://www.pcworld.com/article/2921718/2-easy-ways-to-child-proof-your-android-or-ios-device.html 
+
+1. Creating profiles in Android which is not in the control of the app developer.
+
+Lollipop-enabled Android phones and tablets (running on KitKat or better) include a “restricted” profile that lets you lock down access to only the apps you choose. 
+
+How to set it up?
+Tap Settings > Users > Add user or profile, then tap Restricted profile.
+Next, you’ll see a setup screen with the name “New profile” at the top. Tap New profile to change the name.
+Below the profile name, you’ll see a list of every app installed on your device—including Chrome, Google search, the Camera app, etc. They’re all switched off by default. Certain apps, like Google+ and Google Hangouts, can’t be turned on at all; for the others (like, say, PBS Kids), you can unblock access by flipping the switches next to their icons. You’ll also find a few apps with gear-shaped Settings buttons; tap to configure additional “restricted” settings, such as content ratings for movies and TV shows.
+
+Tap the Back button, put your phone or tablet to sleep, then tap the user icon in the top corner of the screen (for Lollipop-enabled devices) or at the bottom (for KitKat devices). Tap the icon of the restricted profile you just created, and the Android device changes to the chosen profile. The profile can be switched back to any profile again.
+
+Disadvantages : 
+1 - Setting up the profiles is completely in the hands of the device user and not at all in the hands of the app developer. 
+2 - Switching between profiles is very easy. It does not require have any security restriction. The user can easily switch to the owner's profile with a button click.  
+
 2 - Single App Mode 
 
 http://docs.kioskproapp.com/article/833-guided-access-vs-single-app-mode
 
+Single App Mode is similar to Guided Access, but cannot be exited using the Home button and passcode and does not show an on-screen alert like Guided Access when the Home button is pressed.  Also unlike Guided Access, Single App Mode returns the device to an app following a complete reboot.
+
+Placing a device in Single App Mode requires that that device be supervised.  Supervision is a mode designed by Apple specifically for institutionally-owned devices that unlocks a number of management features, including single app mode and silent app push. Supervision also allows you to restrict many iOS apps and features not appropriate for a kiosk-mode device - for example, removing iMessages or preventing deletion or installation of apps. 
+
+Devices can be supervised and placed into Single App Mode using a free Mac app called  Apple Configurator.  
+
+If you are using an Mobile Device Management (MDM) solution and would like to toggle Single App Mode remotely through that, you can also supervise the device through the Device Enrollment Program if purchased directly from Apple or using a third-party software called GroundControl.  When using an MDM, the app must be installed through the MDM.  For paid apps, this requires that you purchase app licenses through Apple's  Volume Purchase Program. Apps installed on the device through iTunes cannot be placed into Single App Mode using an MDM.
+
 3 - Apple Configurator 
+
+Apple's free software package for Mac called Configurator makes it much easier to deploy multiple iPads, allowing you to configure device settings, install apps and data, and supervise devices that need to maintain a standard configuration.
+
+Configurator is able to install apps via license codes purchased through Apple’s Volume Purchase Program.
+
+Configurator includes the ability to supervise an iPad, allowing you to place certain restrictions on the device’s use. Supervision locks the device to the Mac which was used to apply the supervision and which must be used to remove it; the device will no longer sync with any other computer while under supervision.
+
+When used to supervise a device, Configurator allows you to put the iPad into a 'Single App Mode' which disables the Home button similar to Guided Access, but also removes the on-screen notifications requesting a passcode to exit. Single App Mode also appears to block the iOS system update messages that can allow a visitor to exit to the main Settings menu.
+
+While many system settings, like WiFi and device restrictions can be applied through Configurator, be aware that not all system settings are available. In our last tests, we still had to manually turn off multitasking gestures and empty notifications.
 
 http://docs.kioskproapp.com/article/608-using-apple-configurator-for-deployment-management
 
-4 - 
+4 - Windows Assigned Access 
+
+With the launch of the Windows 8 operating system came the introduction of the ‘Assigned Access’ feature. Similar to Apple’s Guided Access, this allows you to choose a single app to be made accessible to the public. By creating a new user account specifically for kiosk use, this is a sure proof way to keep your Windows device locked down.
+
+Follow the steps below to set-up Assigned Access:
+
+1. You must first set up another account (you will need to be logged in as an Administrator to do this)
+2. Swipe right to access PC settings and select: Settings > Change PC settings > Accounts > Other accounts > Add an account > Sign in without a Microsoft account (not recommended)
+3. Under ‘Add a user’, fill in the details (user name could be ‘Kiosk’) and select: Next. Log out of your current account, and log in to your new ‘Kiosk’ account. Install the app you would like to use for Assigned Access and log out again
+4. Log back into your Administrator account, open PC settings, and select: Accounts > Other accounts > Set up an account for assigned access > Choose an account > ‘Kiosk’ > Choose an app (select the app you would like your kiosk to be locked into)
+
+The device will now be locked down into one app. To end Assigned Access, simply log out of the ‘Kiosk’ account and back into your own account.
+
+Whilst signed into Assigned Access, all hardware keys and other touch gestures will be automatically disabled, meaning settings cannot be toggled without signing back in to your own user account.
+
+https://www.bouncepad.com/us/knowhow/lock-ipad-tablet-kiosk-mode/
+
+5 - For an equivalent to Apple’s Guided Access and Windows’ Assigned Access mode to lock down your Android tablet, there are many free apps available. This includes SureLock, Kiosk Browser Lockdown or Kioware (available to download on Google Play store). Follow the on-screen instructions to set your passcode and give users access to selected apps only.
