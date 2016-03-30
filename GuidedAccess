@@ -25,7 +25,7 @@ Alternatives:
 
 http://www.pcworld.com/article/2921718/2-easy-ways-to-child-proof-your-android-or-ios-device.html 
 
-1. Creating profiles in Android which is not in the control of the app developer.
+1. Creating profiles in Android which is not under the control of the app developer.
 
 Lollipop-enabled Android phones and tablets (running on KitKat or better) include a “restricted” profile that lets you lock down access to only the apps you choose. 
 
@@ -38,7 +38,7 @@ Tap the Back button, put your phone or tablet to sleep, then tap the user icon i
 
 Disadvantages : 
 1 - Setting up the profiles is completely in the hands of the device user and not at all in the hands of the app developer. 
-2 - Switching between profiles is very easy. It does not require have any security restriction. The user can easily switch to the owner's profile with a button click.  
+2 - Switching between profiles is very easy. It does not require any security restriction. The user can easily switch to the owner's profile with a button click and access the rest of the apps.   
 
 2 - Single App Mode 
 
@@ -83,7 +83,12 @@ Whilst signed into Assigned Access, all hardware keys and other touch gestures w
 
 https://www.bouncepad.com/us/knowhow/lock-ipad-tablet-kiosk-mode/
 
-5 - For an equivalent to Apple’s Guided Access and Windows’ Assigned Access mode to lock down your Android tablet, there are many free apps available. This includes SureLock, Kiosk Browser Lockdown or Kioware (available to download on Google Play store). Follow the on-screen instructions to set your passcode and give users access to selected apps only.
+5 - Free App (SureLock)  
+
+For an equivalent to Apple’s Guided Access and Windows’ Assigned Access mode to lock down your Android tablet, there are many free apps available. This includes SureLock, Kiosk Browser Lockdown or Kioware (available to download on Google Play store). Follow the on-screen instructions to set your passcode and give users access to selected apps only.
+
+How to set it up?
+Install the SureLock app from the Google Play Store. Open it, accept the agreement, turn on 'surelock' in the list of apps with usage access, click on home soft button, choose surelock (always). It opens the sure lock home screen. Click anywhere on the screen 5 times within 3 seconds. Enter 0000 (default) password. Choose 'Single Application Mode'. Select 'STAAR' app from the list of all the apps that are installed on the device. Choose the appropriate peripheral settings and launch. Restart the device. When the app is loading, click 5 times within 3 seconds on the screen to enter the admin mode. Choose 'exit from sure lock' to exit to the regular home screen. Each time you want to use the Kiosk Mode, click on the sure lock app.    
 
 https://www.42gears.com/products/surelock/ipad-kiosk-software/
 https://www.amtelnet.com/what-is-apple-ios-kiosk-mode/
