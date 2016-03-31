@@ -40,7 +40,7 @@ Disadvantages :
 1 - Setting up the profiles is completely in the hands of the device user and not at all in the hands of the app developer. 
 2 - Switching between profiles is very easy. It does not require any security restriction. The user can easily switch to the owner's profile with a button click and access the rest of the apps.   
 
-2 - Single App Mode 
+2 - Single App Mode using Apple Configurator
 
 http://docs.kioskproapp.com/article/833-guided-access-vs-single-app-mode
 
@@ -51,8 +51,6 @@ Placing a device in Single App Mode requires that that device be supervised.  Su
 Devices can be supervised and placed into Single App Mode using a free Mac app called  Apple Configurator.  
 
 If you are using an Mobile Device Management (MDM) solution and would like to toggle Single App Mode remotely through that, you can also supervise the device through the Device Enrollment Program if purchased directly from Apple or using a third-party software called GroundControl.  When using an MDM, the app must be installed through the MDM.  For paid apps, this requires that you purchase app licenses through Apple's  Volume Purchase Program. Apps installed on the device through iTunes cannot be placed into Single App Mode using an MDM.
-
-3 - Apple Configurator 
 
 Apple's free software package for Mac called Configurator makes it much easier to deploy multiple iPads, allowing you to configure device settings, install apps and data, and supervise devices that need to maintain a standard configuration.
 
@@ -78,7 +76,38 @@ http://docs.kioskproapp.com/article/608-using-apple-configurator-for-deployment-
 http://help.apple.com/configurator/mac/2.1/#/cadbf9c172
 https://www.amtelnet.com/what-is-apple-ios-kiosk-mode/
 
-4 - Windows Assigned Access 
+To unsupervise a device, choose the device and select Actions > Advanced > “Erase all content and settings.”
+To restore a device from backup, choose the device and select 'restore from backup'. 
+MDM (mobile device management) allows remote management of multiple devices enrolled in Device Enrollment Program (EDP) and connected to an MDM server. 
+
+Profile Manager also allows remote management of devices. (http://krypted.com/mac-os-x/profile-manager-in-os-x-server-5/) 
+
+http://help.apple.com/configurator/mac/2.1/#/cadf4637b47e
+https://www.apple.com/education/docs/Assessment_with_iPad.pdf
+https://www.apple.com/iphone/business/docs/DEP_Business_Guide_EN_Feb14.pdf
+
+3 - Free App (SureLock)  
+
+For an equivalent to Apple’s Guided Access and Windows’ Assigned Access mode to lock down your Android tablet, there are many free apps available. This includes SureLock, Kiosk Browser Lockdown or Kioware (available to download on Google Play store). Follow the on-screen instructions to set your passcode and give users access to selected apps only.
+
+How to set it up?
+Install the SureLock app from the Google Play Store. Open it, accept the agreement, turn on 'surelock' in the list of apps with usage access, click on home soft button, choose surelock (always). It opens the sure lock home screen. Click anywhere on the screen 5 times within 3 seconds. Enter 0000 (default) password. Choose 'Single Application Mode'. Select 'STAAR' app from the list of all the apps that are installed on the device. Choose the appropriate peripheral settings and launch. Restart the device. When the app is loading, click 5 times within 3 seconds on the screen to enter the admin mode. Choose 'exit from sure lock' to exit to the regular home screen. Each time you want to use the Kiosk Mode, click on the sure lock app.    
+
+https://www.42gears.com/products/surelock/ipad-kiosk-software/
+
+4 - Screen Pinning in Android
+
+Go to Settings->Security->ScreenPinning->On. Open the app and close it. Click on 'recents' soft button. Hold and pull the recently opened app up. Click on 'pin'. The soft buttons are disabled.   
+
+To exit from the pinned app, hold 'back' and 'recents' soft buttons. 
+
+Disadvantage - Clicking on 'exit' in our STAAR app does not stop us from exiting to the home screen. 
+Better control over the screen pinning can be achieved using the device policy manager by setting up device owner and transparently locking the device. 
+
+http://www.sureshjoshi.com/mobile/android-kiosk-mode-without-root/
+http://florent-dupont.blogspot.fr/2015/01/android-shell-command-dpm-device-policy.html
+
+5 - Windows Assigned Access 
 
 With the launch of the Windows 8 operating system came the introduction of the ‘Assigned Access’ feature. Similar to Apple’s Guided Access, this allows you to choose a single app to be made accessible to the public. By creating a new user account specifically for kiosk use, this is a sure proof way to keep your Windows device locked down.
 
@@ -95,29 +124,8 @@ Whilst signed into Assigned Access, all hardware keys and other touch gestures w
 
 https://www.bouncepad.com/us/knowhow/lock-ipad-tablet-kiosk-mode/
 
-5 - Free App (SureLock)  
-
-For an equivalent to Apple’s Guided Access and Windows’ Assigned Access mode to lock down your Android tablet, there are many free apps available. This includes SureLock, Kiosk Browser Lockdown or Kioware (available to download on Google Play store). Follow the on-screen instructions to set your passcode and give users access to selected apps only.
-
-How to set it up?
-Install the SureLock app from the Google Play Store. Open it, accept the agreement, turn on 'surelock' in the list of apps with usage access, click on home soft button, choose surelock (always). It opens the sure lock home screen. Click anywhere on the screen 5 times within 3 seconds. Enter 0000 (default) password. Choose 'Single Application Mode'. Select 'STAAR' app from the list of all the apps that are installed on the device. Choose the appropriate peripheral settings and launch. Restart the device. When the app is loading, click 5 times within 3 seconds on the screen to enter the admin mode. Choose 'exit from sure lock' to exit to the regular home screen. Each time you want to use the Kiosk Mode, click on the sure lock app.    
-
-https://www.42gears.com/products/surelock/ipad-kiosk-software/
-
 6 - Modification of Android Features (Button functions) in Code
 
 http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/
 
-7 - Screen Pinning in Android
-
-Go to Settings->Security->ScreenPinning->On. Open the app and close it. Click on 'recents' soft button. Hold and pull the recently opened app up. Click on 'pin'. The soft buttons are disabled.   
-
-To exit from the pinned app, hold 'back' and 'recents' soft buttons. 
-
-Disadvantage - Clicking on 'exit' in our STAAR app does not stop us from exiting to the home screen. 
-Better control over the screen pinning can be achieved using the device policy manager by setting up device owner and transparently locking the device. 
-
-http://www.sureshjoshi.com/mobile/android-kiosk-mode-without-root/
-http://florent-dupont.blogspot.fr/2015/01/android-shell-command-dpm-device-policy.html
-
-8 - 
+7 - 
