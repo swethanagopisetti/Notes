@@ -62,9 +62,21 @@ Configurator includes the ability to supervise an iPad, allowing you to place ce
 
 When used to supervise a device, Configurator allows you to put the iPad into a 'Single App Mode' which disables the Home button similar to Guided Access, but also removes the on-screen notifications requesting a passcode to exit. Single App Mode also appears to block the iOS system update messages that can allow a visitor to exit to the main Settings menu.
 
-While many system settings, like WiFi and device restrictions can be applied through Configurator, be aware that not all system settings are available. In our last tests, we still had to manually turn off multitasking gestures and empty notifications.
+While many system settings, like WiFi and device restrictions can be applied through Configurator, be aware that not all system settings are available. In our last tests, we still had to manually turn off multitasking gestures and empty notifications. 
+
+Install apple configurator on MAC. Connect the ipad to the MAC. Right click on the device in the Configurator, choose advanced->Start single app mode. But it gave error saying that the device needs to be supervised. 
+
+I followed the instructions to prepare the device (http://help.apple.com/configurator/mac/2.1/#/cad99bc2a859)
+Preparing a device has configured it clean as a new device. I installed the secure browser app from XCode by connecting it to my MAC. 
+I repeated the steps to start single app mode. It provided a list of all apps installed on the ipad. I choose secure browser. The app started running and disabled home button. 
+
+To exit from the single app mode, right click on the device and choose 'stop single app mode'. 
+
+Disadvantages - 'Preparing' of ipad will wipe it clean and hence any data needs to be backed up.  
 
 http://docs.kioskproapp.com/article/608-using-apple-configurator-for-deployment-management
+http://help.apple.com/configurator/mac/2.1/#/cadbf9c172
+https://www.amtelnet.com/what-is-apple-ios-kiosk-mode/
 
 4 - Windows Assigned Access 
 
@@ -91,5 +103,21 @@ How to set it up?
 Install the SureLock app from the Google Play Store. Open it, accept the agreement, turn on 'surelock' in the list of apps with usage access, click on home soft button, choose surelock (always). It opens the sure lock home screen. Click anywhere on the screen 5 times within 3 seconds. Enter 0000 (default) password. Choose 'Single Application Mode'. Select 'STAAR' app from the list of all the apps that are installed on the device. Choose the appropriate peripheral settings and launch. Restart the device. When the app is loading, click 5 times within 3 seconds on the screen to enter the admin mode. Choose 'exit from sure lock' to exit to the regular home screen. Each time you want to use the Kiosk Mode, click on the sure lock app.    
 
 https://www.42gears.com/products/surelock/ipad-kiosk-software/
-https://www.amtelnet.com/what-is-apple-ios-kiosk-mode/
-https://www.lilitab.com/blogs/news/13361673-the-ultimate-guide-to-configuring-your-ipad-for-kiosk-use
+
+6 - Modification of Android Features (Button functions) in Code
+
+http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/
+
+7 - Screen Pinning in Android
+
+Go to Settings->Security->ScreenPinning->On. Open the app and close it. Click on 'recents' soft button. Hold and pull the recently opened app up. Click on 'pin'. The soft buttons are disabled.   
+
+To exit from the pinned app, hold 'back' and 'recents' soft buttons. 
+
+Disadvantage - Clicking on 'exit' in our STAAR app does not stop us from exiting to the home screen. 
+Better control over the screen pinning can be achieved using the device policy manager by setting up device owner and transparently locking the device. 
+
+http://www.sureshjoshi.com/mobile/android-kiosk-mode-without-root/
+http://florent-dupont.blogspot.fr/2015/01/android-shell-command-dpm-device-policy.html
+
+8 - 
