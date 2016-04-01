@@ -80,11 +80,13 @@ To unsupervise a device, choose the device and select Actions > Advanced > “Er
 To restore a device from backup, choose the device and select 'restore from backup'. 
 MDM (mobile device management) allows remote management of multiple devices enrolled in Device Enrollment Program (EDP) and connected to an MDM server. 
 
-Profile Manager also allows remote management of devices. (http://krypted.com/mac-os-x/profile-manager-in-os-x-server-5/) 
+Profile Manager also allows remote management of devices which is a feature of OS-X server. (http://krypted.com/mac-os-x/profile-manager-in-os-x-server-5/) 
 
 http://help.apple.com/configurator/mac/2.1/#/cadf4637b47e
 https://www.apple.com/education/docs/Assessment_with_iPad.pdf
 https://www.apple.com/iphone/business/docs/DEP_Business_Guide_EN_Feb14.pdf
+
+Organization needs to be enrolled in the Device Enrollment Program(DEP) - https://www.apple.com/iphone/business/docs/DEP_Business_Guide_EN_Feb14.pdf
 
 3 - Free App (SureLock)  
 
@@ -128,4 +130,19 @@ https://www.bouncepad.com/us/knowhow/lock-ipad-tablet-kiosk-mode/
 
 http://www.andreas-schrade.de/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/
 
-7 - 
+7 - Miscellaneous 
+
+https://www.apple.com/iphone/business/docs/DEP_Business_Guide_EN_Feb14.pdf
+http://www.techrepublic.com/article/pro-tip-use-os-x-server-profile-manager-for-mdm/
+https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/iPhoneOTAConfiguration/profile-service/profile-service.html#//apple_ref/doc/uid/TP40009505-CH2-SW37
+https://www.apple.com/iphone/business/docs/iOS_Enterprise_Deployment_Overview_EN_Feb14.pdf
+https://deploy.apple.com/qforms/open/register/enroll1/avs?program=mdm
+http://docs.kioskproapp.com/article/833-guided-access-vs-single-app-mode
+https://www.apple.com/education/docs/DEP_Guide.pdf
+http://blogs.air-watch.com/2013/12/apple-configurator-airwatch-whats-difference/#.Vv6ag2NiO_s
+http://www.air-watch.com/lp/free-trial/#
+https://support.moki.com/entries/102200283-Supervise-iOS-Devices-and-Enroll-in-Moki-Total-Control-
+https://moki.com/blog/moki-unveils-mokitouch-2-free-kiosk-app-for-design-control-and-measurement-of-in-store-digital-experiences/
+https://www.mokimanage.com/aem#/error/new-account
+http://krypted.com/mac-security/managing-ios-devices-with-apple-configurator/
+
