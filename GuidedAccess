@@ -88,6 +88,9 @@ https://www.apple.com/iphone/business/docs/DEP_Business_Guide_EN_Feb14.pdf
 
 Organization needs to be enrolled in the Device Enrollment Program(DEP) - https://www.apple.com/iphone/business/docs/DEP_Business_Guide_EN_Feb14.pdf
 
+DEP allows wireless supervision of multiple devices: https://jira.caltesting.org/secure/RapidBoard.jspa?rapidView=146&view=planning&selectedIssue=PDTDE-1312&quickFilter=639&quickFilter=629
+
+
 3 - Free App (SureLock)  
 
 For an equivalent to Apple’s Guided Access and Windows’ Assigned Access mode to lock down your Android tablet, there are many free apps available. This includes SureLock, Kiosk Browser Lockdown or Kioware (available to download on Google Play store). Follow the on-screen instructions to set your passcode and give users access to selected apps only.
