@@ -1,0 +1,50 @@
+Alternatives to Guided Access
+Guided Access is a feature in iOS that enables focus on a single task while using iPhone, iPad or iPod touch. It helps us achieve the following:
+Temporarily restrict your iOS device to a single app
+Disable areas of the screen that aren’t relevant to a task, or areas where an accidental gesture might cause a distraction
+Disable the hardware buttons so that you can’t return to the Home screen.
+Alternatives in iOS:
+Single App Mode using Apple Configurator
+Single App Mode is similar to Guided Access, but cannot be exited using the Home button and passcode and does not show an on-screen alert like Guided Access when the Home button is pressed. Also unlike Guided Access, Single App Mode returns the device to an app following a complete reboot. Single App Mode also appears to block the iOS system update messages that can allow a visitor to exit to the main Settings menu.
+Placing a device in Single App Mode requires that that device be supervised. Supervision is a mode designed by Apple specifically for institutionally-owned devices that unlocks a number of management features, including single app mode and silent app push. It enables restriction over the iOS apps and features that are not appropriate for a kiosk-mode device. 
+Devices can be supervised and placed into Single App Mode using a free Mac app called Apple Configurator. The app makes it much easier to deploy multiple iPads, allowing you to configure device settings, install apps and data, and supervise devices that need to maintain a standard configuration.
+If you are using a Mobile Device Management (MDM) solution and would like to toggle Single App Mode remotely through that, you can also supervise the device through the Device Enrollment Program if purchased directly from Apple or using a third-party software called GroundControl. When using an MDM, the app must be installed through the MDM. For paid apps, this requires that you purchase app licenses through Apple's Volume Purchase Program. Apps installed on the device through iTunes cannot be placed into Single App Mode using an MDM.
+Supervision locks the device to the Mac which was used to apply the supervision and which must be used to remove it; the device will no longer sync with any other computer while under supervision.
+How to set it up?
+Install apple configurator on MAC. Connect the ipad to the MAC.
+Prepare the device by following the instructions: http://help.apple.com/configurator/mac/2.1/#/cad99bc2a859. Preparing a device configures it clean as a new device.
+Install the secure browser app.
+Right click on the device in the Configurator, choose advanced->Start single app mode. It provided a list of all apps installed on the ipad. Choose secure browser. The app starts running with the home button disabled.
+To exit from the single app mode, right click on the device and choose 'stop single app mode'.
+To unsupervise a device, choose the device and select Actions -> Advanced -> “Erase all content and settings.”
+To restore a device from backup, choose the device and select 'restore from backup'.
+'Preparing' of ipad will wipe it clean and hence any data on the iPad needs to be backed up. Not all system settings like multitasking gestures and empty notifications can be controlled through Configurator. MDM (mobile device management) allows remote management (wireless supervision) of multiple devices enrolled in Device Enrollment Program (EDP) and connected to an MDM server. The organization needs to be enrolled in the Device Enrollment Program(DEP). Profile Manager also allows remote management of devices which is a feature of OS-X server. 
+Alternatives in Android:
+Creating profiles in Android
+Lollipop-enabled Android phones and tablets (running on KitKat or better) include a “restricted” profile that lets you lock down access to only the apps you choose.
+How to set it up?
+Tap Settings -> Users -> Add user or profile -> Restricted profile.
+Next, you’ll see a setup screen with the name “New profile” at the top. Tap New profile to change the name.
+Below the profile name, you’ll see a list of all apps installed on the device including Chrome, Google search, Camera, etc. They’re all switched off by default. The access to apps can be blocked/unblocked by flipping the switches next to their icons. A few apps with Settings button can be configured with additional “restricted” settings.
+Tap the Back button, put your phone or tablet to sleep, then tap the user icon in the top corner of the screen (for Lollipop-enabled devices) or at the bottom (for KitKat devices). Tap the icon of the restricted profile you just created, and the Android device changes to the chosen profile. The profile can be switched back to any profile again.
+Disadvantages :
+Setting up the profiles is entirely in the control of the device user but not controlled by the app developer.
+Switching between profiles is very easy. It does not require any security restriction. The user can easily switch to the owner's profile with a button click and access the rest of the apps.
+     2. Free App (SureLock)
+For an equivalent to Apple’s Guided Access and Windows’ Assigned Access mode to lock down your Android tablet, there are many free apps like SureLock, Kiosk Browser Lockdown or Kioware available in the Play-Store. 
+How to set it up?
+Install the SureLock app from the Google Play Store. Open it, accept the agreement, turn on 'surelock' in the list of apps with usage access, click on home soft button, choose surelock (always). It opens the sure lock home screen. Click anywhere on the screen 5 times within 3 seconds. Enter 0000 (default) password. Choose 'Single Application Mode'. Select 'STAAR' app from the list of all the apps that are installed on the device. Choose the appropriate peripheral settings and launch. Restart the device. When the app is loading, click 5 times within 3 seconds on the screen to enter the admin mode. Choose 'exit from sure lock' to exit to the regular home screen. Each time you want to use the Kiosk Mode, click on the sure lock app.
+The app uses the following API: https://developer.android.com/reference/android/app/usage/package-summary.html.
+     3 - Screen Pinning in Android
+Go to Settings->Security->ScreenPinning->On. Open the 'Secure Browser' app and close it. Click on 'recents' soft button. Hold and pull the recently opened app up. Click on 'pin'. The soft buttons are disabled. To exit from the pinned app, hold 'back' and 'recents' soft buttons.
+Disadvantage - Clicking on 'exit' in our STAAR app does not stop us from exiting to the home screen. Better control over the screen pinning can be achieved using the device policy manager by setting up device owner and transparently locking the device.
+Alternatives in Windows:
+Windows Assigned Access
+The launch of Windows 8 operating system has introduced the ‘Assigned Access’ feature. Similar to Apple’s Guided Access, this allows you to choose a single app to be made accessible.
+How to set it up?
+Log in as administrator and set up another account for kiosk mode. 
+Swipe right to access PC settings and go to Settings -> Change PC settings -> Accounts -> Other accounts -> Add an account -> Sign in without a Microsoft account (not recommended).
+Under ‘Add a user’, fill in the details like user name,etc and click Next. Log out of your current account, and log in to your new ‘Kiosk’ account. Install the app and log out.
+Log back in as administrator, open PC settings, and select: Accounts -> Other accounts -> Set up an account for assigned access -> Choose an account ('Kiosk') -> Choose an app (select the app you would like your kiosk to be locked into)
+The device will now be locked down into one app. To end Assigned Access, simply log out of the ‘Kiosk’ account and back into your own account. 
+While signed into Assigned Access, all hardware keys and other touch gestures will be automatically disabled. Hence settings cannot be toggled without signing back in to your own user account. 
