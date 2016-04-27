@@ -61,3 +61,68 @@ Result  : Native OS or VMware without emulation mode
 ::                   tk,  2008                    ::
 ::               [ www.trapkit.de ]               ::
 ###################################################
+
+Command: wmic baseboard get product, Manufacturer, version, serialnumber 
+Output: Manufacturer    product                                 serialnumber    version
+Intel Corporation       440BX Desktop Reference Platform        none            none
+
+
+Host MAC: 
+In terminal, 
+Command: uname -a
+Output: Darwin ALMBP15-00005 15.4.0 Darwin Kernel Version 15.4.0: Fri Feb 26 22:08:05 PST 2016; root:xnu-3248.40.184~3/RELEASE_X86_64 x86_64
+Command: sw_vers
+Output: 
+ProductName:	Mac OS X
+ProductVersion:	10.11.4
+BuildVersion:	15E65
+Command: sysctl hw.model
+Output: hw.model: MacBookPro8,2
+
+Windows VM in VMWare:
+In terminal:
+Command: cd SpookyNG, SpookyNG.exe
+Output: 
+C:\Users\SwethanaGopisetti\Downloads\ScoopyNG\ScoopyNG>ScoopyNG.exe
+
+
+####################################################
+::       ScoopyNG - The VMware Detection Tool     ::
+::              Windows version v1.0              ::
+
+[+] Test 1: IDT
+IDT base: 0x74f00070
+Result  : Native OS
+
+
+[+] Test 2: LDT
+LDT base: 0xdead0000
+Result  : Native OS
+
+
+[+] Test 3: GDT
+GDT base: 0x74f00070
+Result  : Native OS
+
+
+[+] Test 4: STR
+STR base: 0x40000000
+Result  : Native OS
+
+
+[+] Test 5: VMware "get version" command
+Result  : VMware detected
+Version : Workstation
+
+
+[+] Test 6: VMware "get memory size" command
+Result  : VMware detected
+
+
+[+] Test 7: VMware emulation mode
+Result  : Native OS or VMware without emulation mode
+          (enabled acceleration)
+
+::                   tk,  2008                    ::
+::               [ www.trapkit.de ]               ::
+###################################################
