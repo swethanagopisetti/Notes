@@ -1,0 +1,21 @@
+Ubutu VM: 
+In terminal
+Command: dmesg | grep -i hypervisor
+Output: [0.00000] Hypervisor Detected: KVM
+Command: sudo dmidecode -s bios-version
+Output: VirtualBox
+Command: sudo virt-what
+Output: virtualbox 
+        kvm
+Command: sudo dmidecode | grep Product 
+Output: Product Name: VirtualBox
+Command: grep -q ^flags.*\ hypervisor /proc/cpuinfo && echo "This machine is a VM"
+Output: This machine is a VM
+Command: sudo dmidecode -t system|grep 'Manufacturer\|Product'
+Output: Manufacturer: innotek GmbH
+        Product Name: VirtualBox
+
+WindowsVM:
+In terminal, 
+Command: cd SpookyNG, SpookyNG.exe
+Output: All the tests failed. 
