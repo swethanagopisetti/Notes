@@ -63,8 +63,8 @@ Result  : Native OS or VMware without emulation mode
 ###################################################
 
 Command: wmic baseboard get product, Manufacturer, version, serialnumber 
-Output: Manufacturer    product                                 serialnumber    version
-Intel Corporation       440BX Desktop Reference Platform        none            none
+Output: Manufacturer    product         serialnumber    version
+Oracle Corporation      VirtualBox      0               1.2
 
 
 Host MAC: 
@@ -136,4 +136,3 @@ In terminal
 Command: wmic baseboard get product, Manufacturer, version, serialnumber 
 Output: Manufacturer  Product     SerialNumber  Version
         LENOVO        20AQ006HUS  1ZSUK47J2AY   0B98401 PRO
-
