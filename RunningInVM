@@ -126,3 +126,7 @@ Result  : Native OS or VMware without emulation mode
 ::                   tk,  2008                    ::
 ::               [ www.trapkit.de ]               ::
 ###################################################
+
+Command: wmic baseboard get product, Manufacturer, version, serialnumber 
+Output: Manufacturer    product                                 serialnumber    version
+Intel Corporation       440BX Desktop Reference Platform        none            none
