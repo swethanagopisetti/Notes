@@ -14,6 +14,19 @@ Output: This machine is a VM
 Command: sudo dmidecode -t system|grep 'Manufacturer\|Product'
 Output: Manufacturer: innotek GmbH
         Product Name: VirtualBox
+Note: $ sudo sysctl kernel.dmesg_restrict=1 
+$ dmesg
+dmesg: klogctl failed: Operation not permitted
+$ sudo sysctl kernel.dmesg_restrict=0 
+Command: lspci | grep -i virtualbox  
+Output: ...Virtualbox...
+Command: lscpu
+Output: Hypervisor vendor:KVM
+        Virtualization type: full
+Command: ls -l /dev/disk/by-id/
+Output: ...VBOX_HARDDISK... 
+Command: egrep -wo 'hypervisor' /proc/cpuinfo
+Output: hypervisor
 
 WindowsVM:
 In terminal, 
@@ -204,3 +217,24 @@ Processor Type: 0
 Extended Model: 0
 Extended Family: 0
 Flags: 3dnow, acpi, clflush, cmov, de, dts, fxsr, ia64, mca, mce, mmx, msr, mtrr, pse, sep, serial, ss, sse, sse2, tm, tsc
+
+Ubuntu in VMware: 
+Command: lspci | grep -i VMware  
+Output: ...VMware...
+Command: lscpu
+Output: Hypervisor vendor:VMware
+        Virtualization type: full
+Command: ls -l /dev/disk/by-id/
+Output: ...VMware... 
+Command: egrep -wo 'hypervisor' /proc/cpuinfo
+Output: hypervisor
+
+Ubuntu Host: 
+Command: lspci | grep -i VMware  
+Output: 
+Command: lscpu
+Output: Virtualization: AMD-V
+Command: ls -l /dev/disk/by-id/
+Output: ...TOSHIBA... 
+Command: egrep -wo 'hypervisor' /proc/cpuinfo
+Output: 
