@@ -238,3 +238,13 @@ Command: ls -l /dev/disk/by-id/
 Output: ...TOSHIBA... 
 Command: egrep -wo 'hypervisor' /proc/cpuinfo
 Output: 
+
+Ubuntu guest in QEMU:
+Command: dmesg | egrep -i 'VMware|VBox|virtual|xen|qemu'").read())
+Output: ...QEMU...
+Command: egrep -wo 'hypervisor' /proc/cpuinfo"
+Output: hypervisor
+Command: ls -l /dev/disk/by-id
+Output: ...QEMU...
+Command: cat /proc/scsi/scsi
+Output: ...QEMU...
