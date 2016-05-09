@@ -238,6 +238,8 @@ Command: ls -l /dev/disk/by-id/
 Output: ...TOSHIBA... 
 Command: egrep -wo 'hypervisor' /proc/cpuinfo
 Output: 
+Command: dmesg | egrep -i 'VMware|VBox|virtual|xen|qemu'
+Output:...kvm.. (Hence removed KVM from list of keywords)
 
 Ubuntu guest in QEMU:
 Command: dmesg | egrep -i 'VMware|VBox|virtual|xen|qemu'").read())
@@ -248,3 +250,9 @@ Command: ls -l /dev/disk/by-id
 Output: ...QEMU...
 Command: cat /proc/scsi/scsi
 Output: ...QEMU...
+
+Windows 10 guest in QEMU:
+Command: systeminfo | findstr /C:"System Manufacturer" /C:"System Model"
+Output: ..QEMU..
+Command: wmic baseboard get product, Manufacturer, version, serialnumber
+Output: No instances found
