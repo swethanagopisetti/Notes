@@ -17,6 +17,10 @@ scp 2.36.0-2.36.0.delta sgopisetti@law-dev-02.caltesting.org:~/public_html/updat
 Load old app located in /Users/sgopisetti/Documents/desktop/Installers/dBT/dBT.app which will have the new version's features. 
 
 Note:
-1 - Make sure the app is built using “ant BuildInstallerImage -DoperatingSystem=osx -Dconfig=default -Dcal.url = https://tx-tss.caltesting.org -Dcal.installer.osx.autoupdate.url=https://users.caltesting.org/~sgopisetti/update_test/osxupdates.xml -Dcal.autoupdate.enabled=true -Dcal.installer.osx.sparkle.pubkey=/Users/sgopisetti/dsa_pub.pem -Dcal.client_version=2.36.1 -Dcal.core_version=2.36.1” Build the old and new versions of app with different version numbers. 
+1 - Make sure the app is built using “ant BuildInstallerImage -DoperatingSystem=osx -Dconfig=default 
+-Dcal.url = https://tx-tss.caltesting.org 
+-Dcal.installer.osx.autoupdate.url=https://users.caltesting.org/~sgopisetti/update_test/osxupdates.xml 
+-Dcal.autoupdate.enabled=true -Dcal.installer.osx.sparkle.pubkey=/Users/sgopisetti/dsa_pub.pem 
+-Dcal.client_version=2.36.1 -Dcal.core_version=2.36.1” Build the old and new versions of app with different version numbers. 
 2 - Have the node server running ./tools/ibcli/bin/ibcli run -l localhost -p 8080 -f -a -u https://tx-tss-dev.caltesting.org.
-3 - Make sure that the old an dnew version s of the app are in the locations mentioned in the sparklekelper command. 
+3 - Make sure that the old and new version's of the app are in the locations mentioned in the sparklekelper command. 
