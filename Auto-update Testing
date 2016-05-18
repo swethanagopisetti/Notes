@@ -5,7 +5,7 @@ Steps:
 3. Set up SPARKLEHOME, close n open terminal, run ‘$SPARKLEHOME/bin/generate_keys’
 4. In terminal, ssh law-dev-02.caltesting.org, enter the long password, mkdir -p ~/public_html, chmod 755 ~/public_html, 
 mkdir -p ~/public_html/update_test, chmod 777 ~/public_html/update_test
-5. cd into Users/sgopisetti/cal, open ${cal.branding.short_name}.user.properties, delete the line that says ‘last_update_try'.
+5. Open Users/sgopisetti/cal/${cal.branding.short_name}.user.properties, delete the line (if exists) ‘last_update_try'
 6. In terminal, cd support/platform_kiosk/mac/sparklehelper/, python sparklehelper.py 
 --updatesbaseurl=https://users.caltesting.org/~sgopisetti/update_test --privkey=/Users/sgopisetti/dsa_priv.pem 
 --newapp=/Users/sgopisetti/Documents/desktop/Installers/deploy/dBT/dBT.app 
