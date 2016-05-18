@@ -1,5 +1,4 @@
 Steps:
-
 1. Download, install sparkle from https://sparkle-project.org
 2. Clone the support repo, checkout the branch feature/PDTDE-3491-autoupdate-for-osx branch in both desktop n support repos
 3. Set up SPARKLEHOME, close n open terminal, run ‘$SPARKLEHOME/bin/generate_keys’
@@ -14,7 +13,8 @@ mkdir -p ~/public_html/update_test, chmod 777 ~/public_html/update_test
 scp osxupdates.xml sgopisetti@law-dev-02.caltesting.org:~/public_html/update_test, 
 scp 2.36.0_full.tar.gz sgopisetti@law-dev-02.caltesting.org:~/public_html/update_test, 
 scp 2.36.0-2.36.0.delta sgopisetti@law-dev-02.caltesting.org:~/public_html/update_test, 
-Load old app located in /Users/sgopisetti/Documents/desktop/Installers/dBT/dBT.app which will have the new version's features. 
+Load old app located in /Users/sgopisetti/Documents/desktop/Installers/dBT/dBT.app which will have the new version's 
+features. 
 
 Note:
 1 - Make sure the app is built using “ant BuildInstallerImage -DoperatingSystem=osx -Dconfig=default 
@@ -24,3 +24,37 @@ Note:
 -Dcal.client_version=2.36.1 -Dcal.core_version=2.36.1” Build the old and new versions of app with different version numbers. 
 2 - Have the node server running ./tools/ibcli/bin/ibcli run -l localhost -p 8080 -f -a -u https://tx-tss-dev.caltesting.org.
 3 - Make sure that the old and new version's of the app are in the locations mentioned in the sparklekelper command. 
+
+Test Results:
+1) Check if it is an old version, and if so, try to update it
+2) If not an old version don't update
+- When the old and new versions have the same version number or when the old version's number is greater than the new 
+version's number, it shows dialog box "Checking for updates" and loads the old version of the app. 
+- When the last_update_try had a value with a duration gap of less than 2 hrs, it loads the old version of the app.
+3) If there is an update the update should
+3a) deleted removed files from the update
+- Removed python files are no longer accessible. 
+3b) add new files from the update
+- New python files are now accessible.
+3c) Change files from the update
+- There is a change in the return value of the python module. 
+3summary) So the files should now match the updated files
+4) The version should be updated to the newer one
+- The app version number (at the bottom left and also in the sandbox) changes.  
+5) It should launch the new one after the update
+- When the old app is loaded, it shows a dialog box which says “Checking for updates”, “Applying updates” and loads the new 
+version of the app. 
+6) If an update fails it should try to run anyway
+- It shows up a dialog box with “Cancel update” button, which when clicked loads the old version of the app. 
+7) If possible it should use a delta update instead of a full update
+- It happens by default. But to ensure, the .delta file has been deleted from the url.  
+8) If a delta can not be used it should use the full update
+- Deleted delta xml tags and .delta file from server. Found that the version was hard-coded n got it fixed. 
+
+Questions:
+1) How does autoupdate get started, or called when you run the secure browser?
+2) How are updates made?
+3) How do the keys and signatures work?
+4) How does it know where to look for updates?
+5) How does it know when an update is available?
+6) What is the difference between a full and delta update, when are fulls used?
