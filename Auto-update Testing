@@ -1,0 +1,13 @@
+Steps:
+
+1. Download, install sparkle from https://sparkle-project.org
+2. Clone the support repo, checkout the branch feature/PDTDE-3491-autoupdate-for-osx branch in both desktop n support repos
+3. Set up SPARKLEHOME, close n open terminal, run ‘$SPARKLEHOME/bin/generate_keys’
+4. In terminal, ssh law-dev-02.caltesting.org, enter the long password, mkdir -p ~/public_html, chmod 755 ~/public_html, mkdir -p ~/public_html/update_test, chmod 777 ~/public_html/update_test
+5. In terminal, cd support/platform_kiosk/mac/sparklehelper/, python sparklehelper.py --updatesbaseurl=https://users.caltesting.org/~sgopisetti/update_test --privkey=/Users/sgopisetti/dsa_priv.pem --newapp=/Users/sgopisetti/Documents/desktop/Installers/deploy/dBT/dBT.app --oldapps=/Users/sgopisetti/Documents/desktop/Installers/dBT/dBT.app --outputdir=./out, Go to /Users/sgopisetti/Documents/desktop/Installers/deploy/dBT/conf/system.properties and to /Users/sgopisetti/Documents/desktop/Installers/dBT/conf/system.properties and edit cal.autoupdate.enabled to true. 
+6. In terminal, cd support/platform_kiosk/mac/sparklehelper/out, scp osxupdates.xml sgopisetti@law-dev-02.caltesting.org:~/public_html/update_test, scp 2.36.0_full.tar.gz sgopisetti@law-dev-02.caltesting.org:~/public_html/update_test, scp 2.36.0-2.36.0.delta sgopisetti@law-dev-02.caltesting.org:~/public_html/update_test, Load old app located in /Users/sgopisetti/Documents/desktop/Installers/dBT/dBT.app, open Russ’s sandbox, call a python module from the new app. 
+7. cd into Users/sgopisetti/cal, open ${cal.branding.short_name}.user.properties, delete the line that says ‘last_update_try'.
+
+Note:
+1 - Make sure the app is built using “ant BuildInstallerImage -DoperatingSystem=osx -Dconfig=default -Dcal.url = https://tx-tss.caltesting.org -Dcal.installer.osx.autoupdate.url=https://users.caltesting.org/~sgopisetti/update_test/osxupdates.xml -Dcal.autoupdate.enabled=true -Dcal.installer.osx.sparkle.pubkey=/Users/sgopisetti/dsa_pub.pem -Dcal.client_version=2.36.1 -Dcal.core_version=2.36.1” Build the old and new versions of app with different version numbers. 
+2 - Have the node server running ./tools/ibcli/bin/ibcli run -l localhost -p 8080 -f -a -u https://tx-tss-dev.caltesting.org.
