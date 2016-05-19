@@ -58,3 +58,8 @@ Questions:
 4) How does it know where to look for updates?
 5) How does it know when an update is available?
 6) What is the difference between a full and delta update, when are fulls used?
+
+Testing the Unit Tests:
+- Executed all steps at once and also each step individually
+- Verified the content of the added/removed/modified files 
+- Verified the version numbers of the apps before and after applying the updates. 
