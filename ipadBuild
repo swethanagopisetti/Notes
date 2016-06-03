@@ -1,0 +1,13 @@
+Prerequisites: 
+1. Apple ID and password
+2. Apple Developer Account
+3. XCode
+
+Steps:
+1. Create Team Provisioning Profile (https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/CreatingYourTeamProvisioningProfile/CreatingYourTeamProvisioningProfile.html) 
+2. Add your Account to Xcode (https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/AddingYourAccounttoXcode/AddingYourAccounttoXcode.html#//apple_ref/doc/uid/TP40013839-CH40-SW1)
+3. In XCode, open and build the app (ios/phonegap/dBTELL.xcodeproj) from the git repo and run it on the connected device. 
+
+Note:
+- Make sure the relevant provisioning profile is chosen if XCode has more than one
+- After making any changes,'clean' the project before running it 
