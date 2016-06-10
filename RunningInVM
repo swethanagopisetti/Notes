@@ -256,3 +256,41 @@ Command: systeminfo | findstr /C:"System Manufacturer" /C:"System Model"
 Output: ..QEMU..
 Command: wmic baseboard get product, Manufacturer, version, serialnumber
 Output: No instances found
+
+Mac VM (Server):
+vmac-15:~ ci-bot$ sysctl hw.model
+hw.model: MacPro5,1
+vmac-15:~ ci-bot$ ioreg -l | grep -e Manufacturer -e 'Vendor Name'
+   | |   |   |   |   "USB Vendor Name" = "Parallels"
+   | |   |   |   |   |   "Manufacturer" = "Parallels"
+   | |   |   |   |   | |   "Manufacturer" = "Parallels"
+   | |   |   |   |   |   |   "Manufacturer" = "Parallels"
+   | |   |   |   |   |   | |   "Manufacturer" = "Parallels"
+   | |   |   |   |   |   | |   "Manufacturer" = "Parallels"
+   | |   |   |       |   "Manufacturer" = "Parallels"
+   | |   |   |       | |   "Manufacturer" = "Parallels"
+   | |   |   |       |   |   "Manufacturer" = "Parallels"
+   | |   |   |       |   | |   "Manufacturer" = "Parallels"
+   | |   |   |       |   | |   "Manufacturer" = "Parallels"
+   | |   |   |   |   "USB Vendor Name" = "Parallels"
+   | |   |   |       |   "Manufacturer" = "Parallels"
+   | |   |   |       | |   "Manufacturer" = "Parallels"
+   | |   |   |       |   |   "Manufacturer" = "Parallels"
+   | |   |   |       |   | |   "Manufacturer" = "Parallels"
+   | |   |   |   "Vendor Name" = "Generic"
+   | |   |   | |   "Controller Characteristics" = {"Port Description"="AHCI Version 1.10 Supported","Product Name"="AHCI Controller","Vendor Name"="Generic","Port Speed"="3 Gigabit"}
+   | |   |   | |   "Controller Characteristics" = {"Port Description"="AHCI Version 1.10 Supported","Product Name"="AHCI Controller","Vendor Name"="Generic","Port Speed"="3 Gigabit"}
+   | |   |   |           |   "Device Characteristics" = {"Power Off"=No,"Product Name"="Virtual DVD-ROM","Fast Spindown"=No,"CD Features"=15,"Low Power Polling"=No,"DVD Features"=407,"BD Features"=0,"Vendor Name"="","Async Notification"=No,"Loading Mechanism"="Tray","Product Revision Level"="R103"}
+   | |   |   |     "Controller Characteristics" = {"Port Description"="AHCI Version 1.10 Supported","Product Name"="AHCI Controller","Vendor Name"="Generic","Port Speed"="3 Gigabit"}
+   | |   |   |     "Controller Characteristics" = {"Port Description"="AHCI Version 1.10 Supported","Product Name"="AHCI Controller","Vendor Name"="Generic","Port Speed"="3 Gigabit"}
+   | |   |   |     "Controller Characteristics" = {"Port Description"="AHCI Version 1.10 Supported","Product Name"="AHCI Controller","Vendor Name"="Generic","Port Speed"="3 Gigabit"}
+   | |   |         "Controller Characteristics" = {"Port Description"="AHCI Version 1.10 Supported","Product Name"="AHCI Controller","Vendor Name"="Generic","Port Speed"="3 Gigabit"}
+     | |   "Vendor Name" = "Apple"
+     | |   |   "Device Characteristics" = {"Product Revision Level"="10.11v417.2","Product Name"="Disk Image","Vendor Name"="Apple"}
+     |     |   "Device Characteristics" = {"Product Revision Level"="10.11v417.2","Product Name"="Disk Image","Vendor Name"="Apple"}
+     |     |     "iManufacturer" = 0
+     |     |     "USB Vendor Name" = "Apple Inc."
+     |     | |   "iManufacturer" = 1
+     |     | |   "USB Vendor Name" = "Parallels"
+     |       |   "iManufacturer" = 1
+     |       |   "USB Vendor Name" = "Parallels"
